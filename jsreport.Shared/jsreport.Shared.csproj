@@ -1,14 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net45</TargetFrameworks>
+    <TargetFrameworks>net45;netstandard2.0;net6.0</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>3.8.2</Version>
+    <Version>3.8.3</Version>
     <Authors>Jan Blaha</Authors>
     <Company>jsreport</Company>
     <Product>jsreport</Product>
     <Description>(Internal) Shared helpers for jsreport c# sdk</Description>
-    <Copyright>Copyright 2013-2022 Jan Blaha</Copyright>
+    <Copyright>Copyright 2013-2024 Jan Blaha</Copyright>
     <PackageLicenseUrl>http://www.opensource.org/licenses/mit-license.php</PackageLicenseUrl>
     <PackageProjectUrl>https://jsreport.net</PackageProjectUrl>
     <PackageIconUrl>http://jsreport.net/img/favicon.ico</PackageIconUrl>
@@ -17,8 +17,8 @@
     <PackageTags>jsreport</PackageTags>
     <PackageReleaseNotes>Release notes are at https://github.com/jsreport/jsreport-dotnet-shared/releases</PackageReleaseNotes>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <AssemblyVersion>3.8.2.0</AssemblyVersion>
-    <FileVersion>3.8.1.0</FileVersion>
+    <AssemblyVersion>3.8.3.0</AssemblyVersion>
+    <FileVersion>3.8.3.0</FileVersion>
     <PackageIcon>icon.png</PackageIcon>
   </PropertyGroup>
 
@@ -30,7 +30,7 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <PackageReference Include="jsreport.Types" Version="3.9.4" />       
+        <PackageReference Include="jsreport.Types" Version="3.9.5" />       
       </ItemGroup>
     </Otherwise>
   </Choose>
@@ -42,8 +42,7 @@
     </None>
   </ItemGroup>
 
-  <ItemGroup>    
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
     <PackageReference Include="System.IO.Compression" Version="4.3.0" />
   </ItemGroup>
 
